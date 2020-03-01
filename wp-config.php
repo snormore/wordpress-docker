@@ -18,6 +18,9 @@
  * @package WordPress
  */
 
+define( 'WP_HOME', getenv('WORDPRESS_SITE_URL') );
+define( 'WP_SITEURL', getenv('WORDPRESS_SITE_URL') );
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', getenv('WORDPRESS_DB_NAME') );
