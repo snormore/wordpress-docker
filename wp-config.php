@@ -21,6 +21,12 @@
 define( 'WP_HOME', getenv('WORDPRESS_SITE_URL') );
 define( 'WP_SITEURL', getenv('WORDPRESS_SITE_URL') );
 
+# https://feliciano.tech/blog/running-wordpress-behind-an-sslhttps-terminating-proxy/
+if ( $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https' ) {
+    $_SERVER['HTTPS'] = 'on';
+    $_SERVER['SERVER_PORT'] = 443;
+}
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define( 'DB_NAME', getenv('WORDPRESS_DB_NAME') );
